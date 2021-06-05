@@ -1,0 +1,48 @@
+﻿@model Models.Framework.Message
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Picture</title>
+</head>
+<body>
+    <div>
+        <h4>Message</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Contents)
+            </dt>
+    
+            <dd>
+                @if (Model.Contents.Length > 0)
+                {
+                    <img src="@Url.Content(Model.Contents)" alt="No Image" style="height:200px " />
+                }
+                <br /><br />
+                @using (Html.BeginForm("UpdateIMG", "Chat", FormMethod.Post, 
+                    new{ enctype = "multipart/form-data" }))
+                {
+                    <input type="file" name="Picture" class="col-sm form-control" />
+                    <input type="submit" value="Save Image" class="btn btn-default" />
+
+                }
+            </dd>
+    
+ 
+    
+        </dl>
+    </div>
+    <p>
+
+    </p>
+</body>
+</html>

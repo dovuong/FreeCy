@@ -1,0 +1,16 @@
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\Models.dll.config
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\Models.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\Models.pdb
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\EntityFramework.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\EntityFramework.SqlServer.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\PagedList.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\PagedList.Mvc.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\EntityFramework.xml
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\EntityFramework.SqlServer.xml
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\PagedList.xml
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Release\PagedList.Mvc.xml
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Release\Models.csprojAssemblyReference.cache
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Release\Models.csproj.CoreCompileInputs.cache
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Release\Models.csproj.CopyComplete
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Release\Models.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Release\Models.pdb

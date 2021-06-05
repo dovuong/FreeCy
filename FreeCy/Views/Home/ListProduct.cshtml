@@ -1,0 +1,301 @@
+﻿
+@{
+    ViewBag.Title = "ListProduct";
+    Layout = "~/Views/Shared/_Layoutt.cshtml";
+    var listProducts = (List<Models.Framework.Product>)ViewBag.Products;
+}
+
+
+<!-- Page Heading Section Start -->
+<div class="page-heading-section section bg-parallax" data-bg-image="/assets/images/bg/bg-1.jpg" data-overlay="50">
+    <div class="container">
+        <div class="page-heading-content text-center">
+            <h3 class="title">Browse Jobs</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home/Index">Home</a></li>
+                <li class="breadcrumb-item active">Jobs</li>
+            </ol>
+        </div>
+    </div>
+</div>
+@{var link = "/Home/ListProduct"; }
+<!-- Page Heading Section End -->
+<!-- Recent Jobs Start -->
+<div class="section section-padding">
+    <div class="container">
+        <div class="row mb-n5">
+
+            <div class="col-lg-8 col-12 mb-5 pr-lg-5">
+
+                <!-- Job List Toolbar Start -->
+                <div class="job-list-toolbar">
+                    <p>Showing @ViewBag.Size of @ViewBag.Total results</p>
+                    <p>
+                        Sort by:                      
+                        <a  href="@link?page=1&sort=name" >Name</a>|
+                        <a  href="@link?page=1&sort=recent">Most recent</a>|
+                        <a  href="@link?page=1&sort=price">price</a>
+                        
+                        @*<select>
+                            
+                            <option value="recent"> Most Recent</option>
+                            <option value="name">Name</option>
+                            <option value="price">Price</option>
+
+
+                        </select>*@
+                    </p>
+                </div>
+                <!-- Job List Toolbar End -->
+                <!-- Job List Wrap Start -->
+                <div class="job-list-wrap">
+
+                    <!-- Job List Start -->
+                    @foreach (var item in listProducts)
+                    {
+                        //var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID_Product;
+                        <a href="/Home/Detail/@item.ID_Product" class="job-list">
+                            <div class="company-logo col-auto">
+                                <img src="~/assets/images/companies/@item.Image" alt="@item.Name">
+                            </div>
+                            <div class="salary-type col-auto order-sm-3">
+                                <span class="salary-range">$ @item.Price</span>
+                                <span class="badge badge-success">@item.User.WorkTime</span>
+                            </div>
+                            <div class="content col">
+                                <h6 class="title">@item.Name</h6>
+                                <ul class="meta">
+                                    <li><strong class="text-primary">@item.User.UserName</strong></li>
+                                    <li><i class="fa fa-map-marker"></i>@item.User.Address</li>
+                                </ul>
+                            </div>
+                        </a>
+                    }
+                    <!-- Job List Start -->
+
+                </div>
+                <!-- Job List Wrap Start -->
+                <!-- Pagination Start -->
+                @if (ViewBag.TotalPage > 1)
+                {
+                    var pageDisplay = (int)ViewBag.MaxPage;
+                    int totalPage = (int)ViewBag.TotalPage;
+                    int currentPage = ((int)ViewBag.Page);
+
+                    // Create numeric links
+                    var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+                    var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+                    <nav>
+                        <ul class="pagination pagination-center mt-5">
+
+                            @if (currentPage > ViewBag.First)
+                            {
+                                <li class="page-item"> <a href="@link?page=@ViewBag.First&sort=@ViewBag.sort" title="Trang đầu" class="page-link"><i class="fa fa-angle-double-left"></i></a></li>
+                                <li class="page-item">
+                                    <a href="@link?page=@ViewBag.Prev&sort=@ViewBag.sort" title="Trang trước" class="page-link"><i class="fa fa-angle-left"></i></a>
+                                </li>
+                                @*<li class="page-item"><a class="page-link" href="@link?page=2">2</a></li>*@
+                            }
+                            @for (int i = startPageIndex; i <= endPageIndex; i++)
+                            {
+                                if (currentPage == i)
+                                {
+
+                                    <li class="page-item active"> <a href="@link?page=@i&sort=@ViewBag.sort" class="page-link" title="Trang @i">@i</a></li>
+                                }
+                                else
+                                {
+                                    @*<li><a href="@link?page=@i" title="Trang @i" class="pos">@i</a></li>*@
+                                    <li class="page-item"><a class="page-link" href="@link?page=@i&sort=@ViewBag.sort">@i</a></li>
+                                }
+                            }
+                            @if (currentPage < totalPage)
+                            {
+                                <li class="page-item"> <a href="@link?page=@ViewBag.Next&sort=@ViewBag.sort" class="page-link" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
+                                <li class="page-item"> <a href="@link?page=@ViewBag.Last&sort=@ViewBag.sort" class="page-link" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
+                            }
+
+                        </ul>
+                    </nav> }
+                else
+                {
+                    <span>Không có bản ghi nào</span>}
+
+
+            </div>
+
+            <!-- Job Sidebar Wrap Start -->
+            <div class="col-lg-4 col-12 mb-5">
+                <div class="sidebar-wrap">
+                    <!-- Sidebar (Search) Start -->
+                    <div class="sidebar-widget">
+                        <div class="inner">
+                            <h6 class="title">Search Keywords</h6>
+                            <form action="#">
+                                <input type="text" placeholder="e.g. web design">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Sidebar (Search) End -->
+                    <!-- Sidebar (Category) Start -->
+                    <div class="sidebar-widget">
+                        <div class="inner">
+                            <h6 class="title">Category</h6>
+                            <form action="#">
+                                <select>
+                                    <option value="1">Any category</option>
+                                    <option value="2">Web Designer</option>
+                                    <option value="3">Web Developer</option>
+                                    <option value="4">Graphic Designer</option>
+                                    <option value="5">App Developer</option>
+                                    <option value="6">UI &amp; UX Expert</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Sidebar (Category) End -->
+                    <!-- Sidebar (Location) Start -->
+                    <div class="sidebar-widget">
+                        <div class="inner">
+                            <h6 class="title">Location</h6>
+                            <form action="#">
+                                <input type="text" placeholder="Location">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Sidebar (Location) End -->
+                    <!-- Sidebar (Job Type) Start -->
+                    <div class="sidebar-widget">
+                        <div class="inner">
+                            <h6 class="title">Job Type</h6>
+                            <form action="#" class="mb-n1">
+                                <div class="custom-control custom-checkbox mb-1">
+                                    <input type="checkbox" class="custom-control-input" id="jobtype0">
+                                    <label class="custom-control-label" for="jobtype0">All type</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-1">
+                                    <input type="checkbox" class="custom-control-input" id="jobtype1">
+                                    <label class="custom-control-label" for="jobtype1">Full Time</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-1">
+                                    <input type="checkbox" class="custom-control-input" id="jobtype2">
+                                    <label class="custom-control-label" for="jobtype2">Part Time</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-1">
+                                    <input type="checkbox" class="custom-control-input" id="jobtype3">
+                                    <label class="custom-control-label" for="jobtype3">Freelance</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-1">
+                                    <input type="checkbox" class="custom-control-input" id="jobtype4">
+                                    <label class="custom-control-label" for="jobtype4">Internship</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-1">
+                                    <input type="checkbox" class="custom-control-input" id="jobtype5">
+                                    <label class="custom-control-label" for="jobtype5">Temporary</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Sidebar (Job Type) End -->
+                    <!-- Sidebar (Salary Range) Start -->
+                    <div class="sidebar-widget">
+                        <div class="inner">
+                            <h6 class="title">Salary Range</h6>
+                            <form action="#">
+                                <input type="text" id="salary-range" name="salary-range" class="range-slider" value="" />
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Sidebar (Salary Range) End -->
+                    <!-- Sidebar (Experince) Start -->
+                    <div class="sidebar-widget">
+                        <div class="inner">
+                            <h6 class="title">Experince</h6>
+                            <form action="#" class="mb-n1">
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobExperince" id="jobExperince0">
+                                    <label class="custom-control-label" for="jobExperince0">Any Experince</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobExperince" id="jobExperince1">
+                                    <label class="custom-control-label" for="jobExperince1">1 Year to 2 Year</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobExperince" id="jobExperince2">
+                                    <label class="custom-control-label" for="jobExperince2">2 Year to 3 Year</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobExperince" id="jobExperince3">
+                                    <label class="custom-control-label" for="jobExperince3">3 Year to 4 Year</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobExperince" id="jobExperince4">
+                                    <label class="custom-control-label" for="jobExperince4">4 Year to 5 Year</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Sidebar (Experince) End -->
+                    <!-- Sidebar (Date Posted) Start -->
+                    <div class="sidebar-widget">
+                        <div class="inner">
+                            <h6 class="title">Date Posted</h6>
+                            <form action="#" class="mb-n1">
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted0">
+                                    <label class="custom-control-label" for="jobDatePosted0">Any Date</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted1">
+                                    <label class="custom-control-label" for="jobDatePosted1">Last Hour</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted2">
+                                    <label class="custom-control-label" for="jobDatePosted2">Last 24 Hours</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted3">
+                                    <label class="custom-control-label" for="jobDatePosted3">Last 7 Days</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted4">
+                                    <label class="custom-control-label" for="jobDatePosted4">Last 14 days</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted5">
+                                    <label class="custom-control-label" for="jobDatePosted5">Last 30 days</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Sidebar (Date Posted) End -->
+                    <!-- Sidebar (Qualification) Start -->
+                    <div class="sidebar-widget">
+                        <div class="inner">
+                            <h6 class="title">Qualification</h6>
+                            <form action="#" class="mb-n1">
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobQualification" id="jobQualification0">
+                                    <label class="custom-control-label" for="jobQualification0">Matriculation</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobQualification" id="jobQualification1">
+                                    <label class="custom-control-label" for="jobQualification1">Intermidiate</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-1">
+                                    <input type="radio" class="custom-control-input" name="jobQualification" id="jobQualification2">
+                                    <label class="custom-control-label" for="jobQualification2">Gradute</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Sidebar (Qualification) End -->
+                </div>
+            </div>
+            <!-- Job Sidebar Wrap End -->
+
+        </div>
+    </div>
+</div>
+<!-- Recent Jobs End -->

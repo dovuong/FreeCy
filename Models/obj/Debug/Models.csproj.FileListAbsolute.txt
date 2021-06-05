@@ -1,0 +1,44 @@
+C:\Users\Admin\source\repos\FreeCy\Models\bin\Debug\Models.dll.config
+C:\Users\Admin\source\repos\FreeCy\Models\bin\Debug\Models.dll
+C:\Users\Admin\source\repos\FreeCy\Models\bin\Debug\Models.pdb
+C:\Users\Admin\source\repos\FreeCy\Models\bin\Debug\EntityFramework.dll
+C:\Users\Admin\source\repos\FreeCy\Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\FreeCy\Models\bin\Debug\EntityFramework.xml
+C:\Users\Admin\source\repos\FreeCy\Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\FreeCy\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\FreeCy\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\FreeCy\Models\obj\Debug\Models.csproj.CopyComplete
+C:\Users\Admin\source\repos\FreeCy\Models\obj\Debug\Models.dll
+C:\Users\Admin\source\repos\FreeCy\Models\obj\Debug\Models.pdb
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\Models.dll.config
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\Models.dll
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\Models.pdb
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\EntityFramework.dll
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\EntityFramework.xml
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\obj\Debug\Models.csproj.CopyComplete
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\obj\Debug\Models.dll
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\obj\Debug\Models.pdb
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\PagedList.dll
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\PagedList.Mvc.dll
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\PagedList.xml
+C:\Users\trian\Downloads\freecy-main\freecy-main\Models\bin\Debug\PagedList.Mvc.xml
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\Models.dll.config
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\Models.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\Models.pdb
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\EntityFramework.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\PagedList.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\PagedList.Mvc.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\EntityFramework.xml
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\PagedList.xml
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\bin\Debug\PagedList.Mvc.xml
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Debug\Models.csprojAssemblyReference.cache
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Debug\Models.csproj.CopyComplete
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Debug\Models.dll
+D:\1TAI LIEU BAI TAP\DHBKDN\hk4 2021\PBL3\tes\_FreeCy_Update\Models\obj\Debug\Models.pdb
