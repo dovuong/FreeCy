@@ -84,6 +84,7 @@ namespace FreeCy.Controllers
             obj.CreatedAt = DateTime.Now;
             obj.ID_User = 17;//// lấy ra session.id_user
             MesDao.AddMess(obj);
+            MesDao.Update(obj.ID_MessRoom);
             var Iduserr = MesDao.GetIdByRoom(obj.ID_MessRoom, obj.ID_User);
 
             // tìm iduser của room khác với id của session
@@ -100,11 +101,14 @@ namespace FreeCy.Controllers
 
             var UsDao = new UserDAO();
 
-
+            //ViewBag.listMess = 
             if (UsDao.CheckId(iduser) && iduser != 17)// check khác session
             {
                 string a = MesDao.GetIDRoom(17, iduser);
                 var msss = MesDao.ListAllMess(a);
+                List<MessList> l1 = (MesDao.ListMess(17));  
+                l1.Sort((x, y) => y.UpdateTime.CompareTo(x.UpdateTime));
+                ViewBag.ListMess = l1;
                 ViewBag.IdRoom = a;
                 ViewBag.idus = iduser;
                 ViewBag.Name = UsDao.GetNameById(iduser);

@@ -48,36 +48,30 @@ namespace FreeCy.Controllers
             return View();
         }
 
-        public ActionResult ListProduct2()
+        public ActionResult ListProduct2(int page = 1, int pageSize = 7, string sort = "")
         {
             var listproductDAO = new ProductDAO();
             User user = new User();
-            //ViewBag.Products = listproductDAO.ListProduct(10,4, user);
+            ViewBag.Products = listproductDAO.ListProduct(pageSize, page, user, sort);
+            //var model = listproductDAO.ListAllPaging(page, pageSize);
+            int totalRecord = listproductDAO.GetTotalRecords();
+            ViewBag.sort = sort;
+            ViewBag.Total = totalRecord;
+            ViewBag.Page = page;
+            ViewBag.Size = pageSize;
+            int maxPage = 5;
+            int totalPage = 0;
+
+            totalPage = (int)(totalRecord / pageSize) + 1;
+            ViewBag.TotalPage = totalPage;
+            ViewBag.MaxPage = maxPage;
+            ViewBag.First = 1;
+            ViewBag.Last = totalPage;
+            ViewBag.Next = page + 1;
+            ViewBag.Prev = page - 1;
             return View();
         }
-        //public ActionResult Category(long cateId, int page = 1, int pageSize = 1)
-        //{
-        //    var category = new CategoryDao().ViewDetail(cateId);
-        //    ViewBag.Category = category;
-        //    int totalRecord = 0;
-        //    var model = new ProductDao().ListByCategoryId(cateId, ref totalRecord, page, pageSize);
 
-        //    ViewBag.Total = totalRecord;
-        //    ViewBag.Page = page;
-
-        //    int maxPage = 5;
-        //    int totalPage = 0;
-
-        //    totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
-        //    ViewBag.TotalPage = totalPage;
-        //    ViewBag.MaxPage = maxPage;
-        //    ViewBag.First = 1;
-        //    ViewBag.Last = totalPage;
-        //    ViewBag.Next = page + 1;
-        //    ViewBag.Prev = page - 1;
-
-        //    return View(model);
-        //}
         public ActionResult Detail(int productID)
         {
 

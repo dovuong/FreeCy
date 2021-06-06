@@ -32,7 +32,7 @@ namespace Models.Framework
         public DateTime? CreatedAt { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? UpdatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Conversation> Conversations { get; set; }

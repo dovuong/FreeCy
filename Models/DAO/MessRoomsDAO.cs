@@ -15,36 +15,47 @@ namespace Models.DAO
             db = new FreeCyDB();
         }
 
+        public void Update(string idroom)
+        {
+            var a=db.MessRooms.Find(idroom);
+            a.UpdatedAt = DateTime.Now;
+            db.SaveChanges();
+        }
+
         public void AddMess(Message a)
         {
             db.Messages.Add(a);
             db.SaveChanges();
         }
-        //public List<int> ListAll(int id_User)
-        //{
 
-        //    //var convers = from a in db.Conversations
-        //    //              join b in db.MessRooms
-        //    //              on a.ID_MessRoom equals b.ID_MessRoom
-        //    //              where a.ID_User == id_User
-        //    //              select new MessRoom();
 
-        //    //var Room = convers.ToList();
-        //    //List<int> ID = new List<int>();
-        //    //foreach(var i in Room)
-        //    //{
-        //    //    var r = db.Conversations.Where(x => x.ID_MessRoom == i.ID_MessRoom && x.ID_User != id_User).FirstOrDefault();
-        //    //    ID.Add(r.ID_User);
-        //    //}
-        //    return 1;
-        //    //var cons = db.Conversations.Where(x => x.ID_User == id_User).Select(x => x.ID_MessRoom).ToList();
-        //    //return db.MessRooms.Where(x => x.Status == true).OrderBy(x => x.Name).ToList();
-        //}
         public List<Message> ListAllMess(string id_Room)
         {
 
                 return db.Messages.Where(x => x.ID_MessRoom == id_Room).ToList();
 
+        }
+        public List<MessList> ListMess(int idus)
+        {
+            List<MessList> lime = new List<MessList>();
+            List<int> listi = new List<int>();
+            foreach(var i in db.Conversations.OrderByDescending(x => x.ID_Convers).Where(x => x.ID_User == idus).ToList())
+            {
+                lime.Add(new MessList { 
+                    ID_User=  GetIdByRoom(i.ID_MessRoom, idus),
+                    UserName=UserDAO.Instance.GetUserNameById(GetIdByRoom(i.ID_MessRoom, idus)),
+                    UpdateTime= GetTimeUpdate(i.ID_MessRoom)
+                });
+            }
+            //return db.Messages.Where(x => x.ID_MessRoom == id_Room).ToList();
+            return lime;
+        }
+
+        public DateTime GetTimeUpdate(string idroom)
+        {
+            var r = db.MessRooms.Where(x => x.ID_MessRoom == idroom).FirstOrDefault();
+            DateTime a = r.UpdatedAt;
+            return a;
         }
         public int TotalMess(string id_Room)
         {
@@ -78,7 +89,8 @@ namespace Models.DAO
             string sss = Guid.NewGuid().ToString();
             ms.ID_MessRoom = sss;
             ms.CreatedAt = DateTime.Now;
-            
+            ms.UpdatedAt = DateTime.Now;
+
             db.MessRooms.Add(ms);
             db.SaveChanges();
             

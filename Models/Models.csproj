@@ -70,6 +70,7 @@
     <Compile Include="Framework\Credential.cs" />
     <Compile Include="Framework\FreeCyDB.cs" />
     <Compile Include="Framework\Message.cs" />
+    <Compile Include="Framework\MessList.cs" />
     <Compile Include="Framework\MessRoom.cs" />
     <Compile Include="Framework\Payment.cs" />
     <Compile Include="Framework\ProcessLog.cs" />

@@ -5,6 +5,7 @@
 @{
     Layout = null;
     var idd = ViewBag.idus;
+    List<Models.Framework.MessList> listmess = ViewBag.ListMess;
 }
 
 
@@ -42,7 +43,10 @@
  
 </head>
 <body>
-
+    @foreach(var i in ViewBag.ListMess)
+    {
+    <p>@i.UpdateTime</p>
+    }
 
     <!-- JOB DETAILS START -->
     <section class="section">

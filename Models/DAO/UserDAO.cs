@@ -114,9 +114,13 @@ namespace Models.DAO
             return db.Users.SingleOrDefault(x => x.UserName == userName);
         }
 
-        public String GetNameById(int id)
+        public string GetNameById(int id)
         {
             return (db.Users.SingleOrDefault(x => x.ID_User == id)).Name;
+        }
+        public string GetUserNameById(int id)
+        {
+            return (db.Users.SingleOrDefault(x => x.ID_User == id)).UserName;
         }
         public void SaveUserId(long id)
         {
